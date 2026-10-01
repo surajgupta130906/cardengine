@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Card Engine | Studio Workspace</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="extra2.css">
+</head>
+<body>
+
+    <!-- Header Menu -->
+    <header>
+        <div class="logo">CARD<span>ENGINE</span></div>
+        <button class="btn-home" onclick="window.location.href='index.html'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Return Home
+        </button>
+    </header>
+    
+    <!-- Hero Welcome Intro Typography Block -->
+    <div class="hero-header">
+        <h1>Create Custom Identity Cards</h1>
+        <p>Try Personal Fit Custom Identity Cards</p>
+    </div>
+
+    <!-- Main Engine Generator Structure -->
+    <main class="workspace-container">
+        
+        <!-- Left Column Dashboard Configurator Tools -->
+        <section class="control-panel">
+            <div>
+                <h3 class="section-title">Identity Parameters</h3>
+                <div class="input-group" style="margin-bottom: 1rem;">
+                    <label for="sandbox-name">Cardholder Full Name</label>
+                    <input type="text" id="sandbox-name" value="Suraj" placeholder="e.g., Suraj">
+                </div>
+                <div class="input-group">
+                    <label for="sandbox-title">Professional Title</label>
+                    <input type="text" id="sandbox-title" value="Software Engineer" placeholder="e.g., Software Developer">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title">Color Theme Palette</h3>
+                <div class="palette-options">
+                    <div class="color-dot" data-color="#d4af37" style="background: #d4af37; border-color: #ffffff;"></div>
+                    <div class="color-dot" data-color="#3b82f6" style="background: #3b82f6;"></div>
+                    <div class="color-dot" data-color="#ec4899" style="background: #ec4899;"></div>
+                    <div class="color-dot" data-color="#10b981" style="background: #10b981;"></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title">Surface Environment</h3>
+                <div class="theme-toggle-group">
+                    <button class="toggle-btn" data-theme="light">☀️ Minimalist Light</button>
+                    <button class="toggle-btn active" data-theme="dark">🌙 Midnight Dark</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column Live Interactive Viewport Frame -->
+        <section class="preview-pane">
+            <div id="previewCard" class="mock-card layout-minimalist">
+                <div class="card-identity">
+                    <h2 id="cardRenderName">Suraj</h2>
+                    <p id="cardRenderTitle">Software Engineer</p>
+                </div>
+                
+                <div class="card-contacts">
+                    <div class="contact-item"><span class="contact-icon">■</span><span>Suraj@workspace.local</span></div>
+                    <div class="contact-item"><span class="contact-icon">■</span><span>+91 1234567890</span></div>
+                    <div class="contact-item"><span class="contact-icon">■</span><span>Mumbai, India</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Templates Box -->
+        <section class="box" id="templetes">
+            <h2>Choose Your Template</h2>
+            <p>Professionally designed visiting cards customizable to your style.</p>
+            
+            <div class="template-grid-layout">
+                <!-- 1. Minimalist Modern Box -->
+                <div class="template-left1" data-layout="minimalist">  
+                    <div class="mini-preview-card t1">
+                        <div>
+                            <div class="mini-name">Suraj</div>
+                            <div class="mini-title">Software Engineer</div>
+                        </div>
+                        <div class="mini-lines"><div class="mini-line"></div><div class="mini-line"></div></div>
+                    </div>
+                    <div class="template-label-text">Minimalist Modern</div>
+                </div>
+
+                <!-- 2. Corporate Classic Box -->
+                <div class="template-right1" data-layout="corporate">
+                    <div class="mini-preview-card t2">
+                        <div>
+                            <div class="mini-name">Suraj</div>
+                            <div class="mini-title">Software Engineer</div>
+                        </div>
+                        <div class="mini-lines"><div class="mini-line"></div></div>
+                    </div>
+                    <div class="template-label-text">Corporate Classic</div>
+                </div>
+
+                <!-- 3. Creative Accent Box -->
+                <div class="template-left2" data-layout="creative">
+                    <div class="mini-preview-card t3">
+                        <div>
+                            <div class="mini-name">Suraj</div>
+                            <div class="mini-title">Software Engineer</div>
+                        </div>
+                        <div class="mini-lines"><div class="mini-line" style="width:25px;"></div><div class="mini-line" style="width:25px;"></div></div>
+                    </div>
+                    <div class="template-label-text">Creative Accent</div>
+                </div>
+
+                <!-- 4. Bold Edge Split Box -->
+                <div class="template-right2" data-layout="bold">
+                    <div class="mini-preview-card t4">
+                        <div>
+                            <div class="mini-name">Suraj</div>
+                            <div class="mini-title">Software Engineer</div>
+                        </div>
+                        <div class="mini-lines"><div class="mini-line"></div><div class="mini-line"></div></div>
+                    </div>
+                    <div class="template-label-text">Bold Edge Split</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Link to the isolated external JavaScript engine file -->
+    <script src="card_engine.js"></script>
+</body>
+</html>

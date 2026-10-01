@@ -1,0 +1,328 @@
+/* ================= BASE ENVIRONMENT STYLES ================= */
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-gold: #d4af37;
+    --border-color: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= NAVIGATION BAR ================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    background-color: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.logo span {
+    color: var(--accent-gold);
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+}
+
+/* ================= DEPLOYED WORKSPACE ENGINE ================= */
+.workspace-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .workspace-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.control-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 0.75rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+input[type="text"] {
+    background: #0f172a;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-gold);
+}
+
+.palette-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+}
+
+.color-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.color-dot:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.toggle-btn {
+    flex: 1;
+    background: #0f172a;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.toggle-btn.active {
+    opacity: 1;
+    border-color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================= MAIN PREVIEW INTERFACE AREA ================= */
+.preview-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #090d16;
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    min-height: 350px;
+    position: sticky;
+    top: 2rem;
+}
+
+.mock-card {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1.75 / 1;
+    background: #1e1e24;
+    color: #ffffff;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+/* Live Preview Layout Variation CSS Modifiers */
+.mock-card.layout-minimalist { border-left: 8px solid var(--accent-gold); padding-left: 2rem; }
+.mock-card.layout-corporate { background: linear-gradient(135deg, #13131a 70%, var(--accent-gold) 70%); }
+.mock-card.layout-creative { align-items: center; justify-content: center; text-align: center; gap: 1rem; }
+.mock-card.layout-creative .card-contacts { flex-direction: row; flex-wrap: wrap; justify-content: center; border-top: none; }
+.mock-card.layout-bold { border-top: 8px solid var(--accent-gold); }
+
+.card-identity h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.card-identity p { font-size: 0.9rem; color: var(--accent-gold); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.card-contacts { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8rem; opacity: 0.8; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 0.75rem; }
+.contact-item { display: flex; align-items: center; gap: 0.5rem; }
+.contact-icon { color: var(--accent-gold); }
+
+/* ================= SPECIFIC TEMPLATES SECTION SELECTIONS ================= */
+.box#templetes {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    grid-column: 1 / -1;
+}
+
+.box#templetes h2 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.box#templetes p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; }
+
+.template-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.template-left1, .template-right1, .template-left2, .template-right2 {
+    background: #0f172a;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.template-left1:hover, .template-right1:hover, .template-left2:hover, .template-right2:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+.template-label-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: center;
+}
+
+/* ================= MICRO MINI CARD TEMPLATE COMPONENT ARCHITECTURES ================= */
+.mini-preview-card {
+    width: 100%;
+    aspect-ratio: 1.75 / 1;
+    background: #1e1e24;
+    border-radius: 6px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+.mini-name { font-size: 0.75rem; font-weight: bold; color: #fff; }
+.mini-title { font-size: 0.5rem; color: var(--accent-gold); text-transform: uppercase; font-weight: 600; }
+.mini-lines { display: flex; flex-direction: column; gap: 2px; }
+.mini-line { width: 40px; height: 3px; background: rgba(255,255,255,0.15); border-radius: 1px; }
+
+.mini-preview-card.t1 { border-left: 4px solid var(--accent-gold); }
+.mini-preview-card.t2 { background: linear-gradient(135deg, #13131a 68%, var(--accent-gold) 68%); }
+.mini-preview-card.t3 { align-items: center; justify-content: center; text-align: center; }
+.mini-preview-card.t3 .mini-lines { flex-direction: row; gap: 4px; }
+.mini-preview-card.t4 { border-top: 4px solid var(--accent-gold); }
+ 
+.hero-header {
+  text-align: center;
+  margin-bottom: 25px;
+  animation: fadeInDown 0.8s ease out;
+}
+
+.hero-header h1 {
+  margin: 20px 10px 8px 0;
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero-header p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #94a3b8;
+}
+ 
+.btn-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+  padding: 8px 16px !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+  width: auto !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-home:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #6366f1 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2) !important;
+}

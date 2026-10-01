@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Card Preview | CardEngine ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="preview.css">
+</head>
+<body>
+
+  <!-- Clean App Branding Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo-group">
+      <div class="nav-logo-badge">🎨</div>
+      <div class="nav-logo-text">Card<span>Engine</span></div>
+    </div>
+  </nav>
+
+  <!-- Central Showcase Stage Layout Container -->
+  <div class="preview-stage">
+    <div class="stage-header">
+      <h1>Print Verification Ready</h1>
+      <p>Look over your card alignment one last time before exporting to hardware prints</p>
+    </div>
+
+    <!-- Live Card Sandbox Target Container Block -->
+    <div id="cardPreview">
+      <!-- Generated actively inside script engine logic below -->
+    </div>
+
+    <!-- App System Control Buttons Matrix 
+    <div class="actions-grid">
+      <button class="btn-main" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <div class="secondary-row">
+        <button class="btn-sub" onclick="editDetails()">✏️ Edit Details</button>
+        <button class="btn-sub" onclick="changeDesign()">🎨 Change Design</button>
+      </div>
+      <button class="btn-sub" onclick="goHome()" style="width: 100%; margin-top: 4px;">🏠 Go to Homepage</button>
+    </div>
+  </div> -->
+  
+  <!-- App System Control Buttons Matrix -->
+    <div class="actions-grid">
+      <div style="text-align: center; font-size: 0.8rem; color: #6366f1; margin-bottom: -4px; font-weight: 500;">
+        💡 Tip: You can click directly on the text elements below to live-edit them!
+      </div>
+      <button class="btn-main" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <button class="btn-main" onclick="downloadCardImage()" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2); margin-top: -4px;">💾 Download as PNG Image</button>
+      <div class="secondary-row">
+        <button class="btn-sub" onclick="editDetails()">✏️ Edit Details</button>
+        <button class="btn-sub" onclick="changeDesign()">🎨 Change Design</button>
+      </div>
+      <button class="btn-sub" onclick="goHome()" style="width: 100%; margin-top: 4px;">🏠 Go to Homepage</button>
+    </div>
+
+  <!-- External Script Interface File Binding -->
+  
+  
+  
+ <!-- External Canvas Export Engine Dependency (Required for PNG Download) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+  <!-- External Script Interface File Binding -->
+  <script src="script.js"></script>
+  <script src="preview.js"></script>
+  
+  <script>
+    // Validation routing check block mapping logic
+    
+    
+ 
+  </script>
+</body>
+</html> 
+ 
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workspace | Enter Card Details</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+  <!-- Top Glassmorphism Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">⚡ CARDENGINE</div>
+    <div class="nav-actions">
+      <button class="nav-btn" onclick="window.location.href='index.html'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Return Home
+      </button>
+     <!-- <button class="nav-btn btn-logout" onclick="logout()"> -->
+     <button class="nav-btn btn-logout" onclick="handleLogout()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1-2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <h1>Enter Visiting Card Details</h1>
+  <p class="subtitle">Step 1: Input your baseline branding data properties</p>
+
+  <!-- Container pulls cosmic background card formatting directly from style.css -->
+  <div class="container">
+    <form id="cardForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="designation" placeholder="Designation" required>
+      <input type="text" id="org" placeholder="Organisation" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      
+      <!-- Labeled custom layout setup for image assets -->
+      <div class="file-input-wrapper">
+        <label class="file-label" for="logo">Company Logo Asset</label>
+        <input type="file" id="logo" accept="image/*">
+      </div>
+
+      <button type="submit">Next → Choose Design</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Security check to verify the session exists
+    checkLogin();
+
+    // Pull previously saved information if the user came back to edit details
+    const username = sessionStorage.getItem("currentUser");
+    const card = JSON.parse(sessionStorage.getItem(username + "_cardData"));
+
+    if (card) {
+        document.getElementById("name").value = card.name || '';
+        document.getElementById("designation").value = card.designation || '';
+        document.getElementById("org").value = card.org || '';
+        document.getElementById("email").value = card.email || '';
+        document.getElementById("mobile").value = card.mobile || '';
+        
+     
+    }
+    //////////////////////////////////////////////////////////////////////////
+    function handleLogout() {
+    // Clear auth token
+    sessionStorage.removeItem("isLoggedIn");
+    
+    // Clear lingering route memory so it doesn't auto-forward you next time
+    localStorage.removeItem("redirectAfterLogin");
+    
+    alert('Signing out from Workspace...');
+    window.location.href = "extra.html";
+}
+///////////////////////////////////////////////////////////////////////////
+  </script>
+</body>
+</html>

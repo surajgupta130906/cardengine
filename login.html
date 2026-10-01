@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visiting Card Portal | Access</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- Blurred Top Navigation Workspace Header Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">⚡ CARDENGINE</div>
+    <div class="nav-links">
+      <!-- Return to Home Page Layout Button Routing -->
+      <button class="btn-home" onclick="window.location.href='index.html'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Return Home
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Welcome Intro Typography Block -->
+  <div class="hero-header">
+    <h1>Create Custom Identity Cards</h1>
+    <p>Sign in to enter your real-time vector layout workshop</p>
+  </div>
+
+  <div class="container">
+    
+    <!-- Smooth Interactive Section Toggle Slider -->
+    <div class="auth-toggle-box">
+      <button id="tabLogin" class="toggle-btn active" onclick="switchTab('login')">Sign In</button>
+      <button id="tabRegister" class="toggle-btn" onclick="switchTab('register')">Create Account</button>
+    </div>
+
+    <!-- Login Module -->
+    <div id="loginSection" class="auth-section active">
+      <h3>Welcome Back</h3>
+      <input type="text" id="loginUser" placeholder="Enter username" required>
+      <input type="password" id="loginPass" placeholder="Enter password" required>
+      <button onclick="login()">Access Workspace</button>
+    </div>
+
+    <!-- Registration Module -->
+    <div id="registerSection" class="auth-section">
+      <h3>Get Started</h3>
+      <input type="text" id="regUser" placeholder="Choose username" required>
+      <input type="text" id="regName" placeholder="Full name" required>
+      <input type="email" id="regEmail" placeholder="Email address" required>
+      <input type="password" id="regPass" placeholder="Security password" required>
+      <button onclick="register()">Register Profile</button>
+    </div>
+
+  </div>
+
+ 
+  <script src="script.js"></script>
+ 
+</body>
+</html>

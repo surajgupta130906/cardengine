@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Playground | CardEngine ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design.css">
+  <style>
+    /* Global Base & Theme Setup - Vibrant & Joyful */
+ 
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Layer Bar Container -->
+  <nav class="navbar">
+    <div class="nav-logo-group">
+      <div class="nav-logo-badge">🎨</div>
+      <div class="nav-logo-text">Card<span>Engine</span></div>
+    </div>
+    <div class="nav-actions">
+      <div class="user-status" id="navUserBadge">Profile Builder</div>
+      <button class="nav-btn" onclick="window.location.href='index.html'">Return Home</button>
+      <button class="nav-btn btn-logout" onclick="logout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard-header">
+      <h1>Design Playground 🎉</h1>
+      <p>Unleash your personality with custom color dynamics, clean fonts, and 12 unique card structures</p>
+    </div>
+
+    <!-- Main Workspace Area Splitting Layout Controls and Sandbox Preview -->
+    <div class="dashboard-workspace">
+      
+      <!-- Left Configurator Form Container -->
+      <div class="control-panel">
+        <form id="designForm">
+          
+          <h3 class="panel-title">🌈 Color Flavors</h3>
+          <div class="color-matrix">
+            <div class="color-wrapper">
+              <label for="primary">Background</label>
+              <input type="color" id="primary" value="#ffffff" oninput="updateLivePreview()">
+            </div>
+            <div class="color-wrapper">
+              <label for="secondary">Card Border</label>
+              <input type="color" id="secondary" value="#4f46e5" oninput="updateLivePreview()">
+            </div>
+            <div class="color-wrapper">
+              <label for="text">Text Theme</label>
+              <input type="color" id="text" value="#0f172a" oninput="updateLivePreview()">
+            </div>
+          </div>
+
+          <h3 class="panel-title">✍️ Font Personalities</h3>
+          <div class="font-matrix">
+            <label class="option-card" id="card-f1">
+              <input type="radio" name="font" value="'Playfair Display', serif" checked onchange="updateLivePreview()">
+              <div class="option-details" style="font-family: 'Playfair Display', serif;">
+                <h4>Playfair Display</h4>
+                <p>Elegant & Literary</p>
+              </div>
+            </label>
+            <label class="option-card" id="card-f2">
+              <input type="radio" name="font" value="'Montserrat', sans-serif" onchange="updateLivePreview()">
+              <div class="option-details" style="font-family: 'Montserrat', sans-serif;">
+                <h4>Montserrat</h4>
+                <p>Clean & Geometric</p>
+              </div>
+            </label>
+            <label class="option-card" id="card-f3">
+              <input type="radio" name="font" value="'Roboto', sans-serif" onchange="updateLivePreview()">
+              <div class="option-details" style="font-family: 'Roboto', sans-serif;">
+                <h4>Roboto</h4>
+                <p>Modern Technical Standard</p>
+              </div>
+            </label>
+            <label class="option-card" id="card-f4">
+              <input type="radio" name="font" value="'Poppins', sans-serif" onchange="updateLivePreview()">
+              <div class="option-details" style="font-family: 'Poppins', sans-serif;">
+                <h4>Poppins</h4>
+                <p>Friendly Rounded Sans</p>
+              </div>
+            </label>
+          </div>
+
+          <h3 class="panel-title">📐 Layout Structural Formats (12 Premium Layouts)</h3>
+          <div class="layout-matrix">
+            <!-- Suite One -->
+            <label class="option-card" id="card-t1">
+              <input type="radio" name="template" value="1" checked onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 1</h4><p>Balanced Centered Alignment</p></div>
+            </label>
+            <label class="option-card" id="card-t2">
+              <input type="radio" name="template" value="2" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 2</h4><p>Compact Split Info Row</p></div>
+            </label>
+            <label class="option-card" id="card-t3">
+              <input type="radio" name="template" value="3" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 3</h4><p>Side Profile Column Layout</p></div>
+            </label>
+            <label class="option-card" id="card-t4">
+              <input type="radio" name="template" value="4" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 4</h4><p>Stacked Corporate Banner</p></div>
+            </label>
+            
+            <!-- Suite Two -->
+            <label class="option-card" id="card-t5">
+              <input type="radio" name="template" value="5" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 5</h4><p>Minimalist Side-Modern Bar</p></div>
+            </label>
+            <label class="option-card" id="card-t6">
+              <input type="radio" name="template" value="6" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 6</h4><p>Asymmetric Corporate Gradient</p></div>
+            </label>
+            <label class="option-card" id="card-t7">
+              <input type="radio" name="template" value="7" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 7</h4><p>Creative Circular Accent</p></div>
+            </label>
+            <label class="option-card" id="card-t8">
+              <input type="radio" name="template" value="8" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Format 8</h4><p>Bold Asymmetric Top Edge</p></div>
+            </label>
+
+            <!-- Suite Three -->
+            <label class="option-card" id="card-t9">
+              <input type="radio" name="template" value="9" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Template 9</h4><p>Neon Tech Dark (No Image)</p></div>
+            </label>
+            <label class="option-card" id="card-t10">
+              <input type="radio" name="template" value="10" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Template 10</h4><p>Clean Corporate Light</p></div>
+            </label>
+            <label class="option-card" id="card-t11">
+              <input type="radio" name="template" value="11" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Template 11</h4><p>Luxury Minimal Gold</p></div>
+            </label>
+            <label class="option-card" id="card-t12">
+              <input type="radio" name="template" value="12" onchange="updateLivePreview()">
+              <div class="option-details"><h4>Template 12</h4><p>Emerald Fresh</p></div>
+            </label>
+          </div>
+
+          <button type="submit" class="generate-btn">Save Configuration & Go to Preview →</button>
+        </form>
+      </div>
+
+      <!-- Right Column Sandbox Area -->
+      <div class="preview-column">
+        <div class="preview-box">
+          <div class="preview-label-bar">
+            <div class="preview-title">Realtime Canvas Sandbox</div>
+            <div class="live-dot">Interactive Preview</div>
+          </div>
+
+          <!-- Live Functional Target Element Container Window -->
+          <div class="card-preview-window" id="cardPreview" style="padding: 25px; border-width: 4px; border-style: solid; display: flex; flex-direction: column; justify-content: space-between;">
+              <!-- Processed via updateLivePreview() -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+ <script   src="design.js"> </script>
+</body>
+</html>
